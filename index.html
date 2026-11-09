@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Sin Fronteras | Incubación Pre-Aduanera para Medianas Empresas</title>
+  <meta name="description" content="Plataforma de incubación pre-aduanera para medianas empresas de Santa Marta. Universidad del Magdalena.">
+  
+  <!-- Tipografía de Alto Rendimiento (Montserrat & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de Estilos de Diseño Editorial & Minimalista -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       BARRA DE NAVEGACIÓN FIJA MINIMALISTA
+       ======================================================================== -->
+  <header class="navbar-fixed" id="mainNavbar">
+    <div class="container navbar-container">
+      
+      <!-- Identificador de Marca con el Logo Oficial en SVG -->
+      <a href="#inicio" class="brand-link" data-target="pagina-inicio" title="Ruta Sin Fronteras - Portal Oficial">
+        <img src="assets/logo.svg" alt="Logo Ruta Sin Fronteras" class="brand-logo-img">
+        <div class="brand-editorial-lockup">
+          <span class="brand-editorial-title">INCUBACIÓN PRE-ADUANERA</span>
+          <span class="brand-editorial-sub">SANTA MARTA • UNIMAGDALENA</span>
+        </div>
+      </a>
+
+      <!-- Botón Menú Móvil -->
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir Menú de Navegación">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- 4 Enlaces Principales -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#inicio" class="nav-link active" data-target="pagina-inicio">
+              <span class="nav-num">01.</span>Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#glocalizacion" class="nav-link" data-target="pagina-glocalizacion">
+              <span class="nav-num">02.</span>Glocalización Técnica
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#cultura" class="nav-link" data-target="pagina-cultura">
+              <span class="nav-num">03.</span>Cultura Exportadora
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#simulador" class="nav-link" data-target="pagina-simulador">
+              <span class="nav-num">04.</span>Simulador Aduanero
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Espaciador de compensación -->
+  <div class="nav-spacer"></div>
+
+  <main>
+
+    <!-- ======================================================================
+         PÁGINA 1: INICIO (HOME)
+         ====================================================================== -->
+    <section id="pagina-inicio" class="page-view active-page">
+      
+      <!-- Hero Editorial con Fondo Náutico del Puerto de Santa Marta -->
+      <div class="hero-editorial">
+        <div class="hero-editorial-backdrop"></div>
+        <div class="container hero-editorial-grid">
+          
+          <div class="hero-meta-bar">
+            <div class="hero-meta-badge">
+              Iniciativa de Incubación Pre-Aduanera Territorial
+            </div>
+            <div class="hero-coordinates">
+              11°14'31"N 74°12'19"W • PUERTO DE SANTA MARTA (D.T.C.H.)
+            </div>
+          </div>
+
+          <h1 class="hero-title">Ruta Sin Fronteras: Incubación Pre-Aduanera para Medianas Empresas de Santa Marta.</h1>
+          <h2 class="hero-subtitle">Transformamos el miedo al comercio internacional en un proceso seguro, técnico y libre de multas.</h2>
+
+          <!-- Botón Gigante Naranja -->
+          <button type="button" class="btn-editorial-cta" id="btnIniciarRecorrido">
+            <span>Iniciar Recorrido</span>
+            <span class="cta-arrow">→</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Sección Blanca debajo de la imagen (El Problema) - Diseño Tipo Informe Especial -->
+      <div class="section-problem">
+        <div class="container">
+          
+          <div class="editorial-report-layout">
+            
+            <!-- Barra Lateral con Ficha de Auditoría -->
+            <aside class="report-sidebar">
+              <span class="report-tag">INFORME EMPÍRICO DIAN</span>
+              <h3 class="report-context-title">Estudio Seccional 19 Santa Marta</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6;">
+                Triangulación metodológica de audios testimoniales, normativas aduaneras y caso de estudio manufacturero hacia Miami.
+              </p>
+              
+              <ul class="report-meta-list">
+                <li><strong>JURISDICCIÓN:</strong> Magdalena D.T.C.H.</li>
+                <li><strong>RÉGIMEN:</strong> Decreto Ley 2586 / 2026</li>
+                <li><strong>ESTADO:</strong> Autogestión Punitiva</li>
+                <li><strong>ENFOQUE:</strong> ODS 8 y ODS 9</li>
+              </ul>
+            </aside>
+
+            <!-- Contenido Principal -->
+            <div class="report-main-content">
+              <span class="mono-label">DIAGNÓSTICO TERRITORIAL Y OPERATIVO</span>
+              <h2 class="problem-title">La Paradoja del Puerto y el Vacío del Estado.</h2>
+              
+              <div class="problem-paragraph-editorial">
+                "Santa Marta cuenta con un puerto clave, pero las medianas empresas no exportan por miedo a las multas. El programa 'Plan Canguro' de la DIAN solo ofrece videos, dejando al empresario desprotegido frente a normativas internacionales. Ruta Sin Fronteras nace para cerrar este vacío con acompañamiento técnico integral."
+              </div>
+
+              <!-- Tres Celdas de Evidencia Real del Estudio -->
+              <div class="audit-stats-grid">
+                
+                <div class="stat-cell">
+                  <div class="stat-num">01</div>
+                  <div class="stat-title">Empresa Vinculada</div>
+                  <div class="stat-desc">En toda la ciudad solo 1 industria se ha inscrito en el Plan Canguro, contrastando con la cultura de riesgo de Barranquilla.</div>
+                </div>
+
+                <div class="stat-cell">
+                  <div class="stat-num">00</div>
+                  <div class="stat-title">Lotes Exportados</div>
+                  <div class="stat-desc">Parálisis absoluta: el lote piloto fue rechazado en Miami por falta de reformulación bromatológica previa al embarque.</div>
+                </div>
+
+                <div class="stat-cell">
+                  <div class="stat-num">2586</div>
+                  <div class="stat-title">Decreto Ley 2026</div>
+                  <div class="stat-desc">Régimen sancionatorio que expone al patrimonio del empresario a multas de $100 millones COP por errores de transcripción en el SIE.</div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         PÁGINA 2: CLÍNICA DE GLOCALIZACIÓN TÉCNICA
+         ====================================================================== -->
+    <section id="pagina-glocalizacion" class="page-view">
+      <div class="section-lab">
+        <div class="container container-narrow">
+          
+          <div class="lab-header">
+            <span class="mono-label">PILAR A • INTELIGENCIA TÉCNICA PRE-EMBARQUE</span>
+            <h1 class="page-title-clean">Clínica de Glocalización Técnica</h1>
+            <p class="page-intro-clean">"Antes de producir el lote final, adaptamos tu producto a las exigencias de EE. UU. para evitar rechazos en el puerto de destino."</p>
+          </div>
+
+          <!-- Componente Interactivo Selector de Sector -->
+          <div class="lab-intake-card">
+            <div class="lab-prompt-headline">Simulador de requisitos: Seleccione el sector de su empresa</div>
+            
+            <div class="sector-switch-row">
+              <button type="button" class="btn-lab-toggle" id="btnSectorAlimentos" data-sector="alimentos">
+                [ Alimentos y Bebidas ]
+              </button>
+              <button type="button" class="btn-lab-toggle" id="btnSectorMadera" data-sector="madera">
+                [ Manufacturas en Madera ]
+              </button>
+            </div>
+
+            <!-- Recuadro Alerta Alimentos y Bebidas (Texto Literal Exigido) -->
+            <div class="glocalization-result-box" id="resultBoxAlimentos">
+              <div class="alert-header-clean">
+                ⚠️ Alerta de Requisitos - Mercado Estados Unidos:
+              </div>
+              
+              <ul class="requirements-list-clean">
+                <li>1. Cumplimiento obligatorio normativas FDA.</li>
+                <li>2. Tabla nutricional en formato americano.</li>
+                <li>3. Vistos buenos INVIMA vigentes.</li>
+              </ul>
+
+              <div class="status-badge-clean">
+                <span>🟢 ESTADO: Producto adaptado y blindado contra rechazos.</span>
+              </div>
+            </div>
+
+            <!-- Recuadro Alerta Madera (Caso Parlantes de Madera de la Tesis) -->
+            <div class="glocalization-result-box" id="resultBoxMadera">
+              <div class="alert-header-clean">
+                ⚠️ Alerta de Requisitos - Mercado Estados Unidos (Caso Manufacturas / Parlantes en Madera):
+              </div>
+              
+              <ul class="requirements-list-clean">
+                <li>1. Cumplimiento estricto Norma Internacional NIMF 15 (Tratamiento térmico HT en madera y estibas).</li>
+                <li>2. Declaración de legalidad botánica y trazabilidad de origen bajo la Ley Lacey (USDA / APHIS).</li>
+                <li>3. Vistos buenos y salvoconducto fitosanitario de exportación emitido por el ICA.</li>
+              </ul>
+
+              <div class="status-badge-clean">
+                <span>🟢 ESTADO: Madera tratada, trazabilidad legal blindada contra comiso en puerto.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PÁGINA 3: ESCUELA DE CULTURA EXPORTADORA Y NEGOCIACIÓN
+         ====================================================================== -->
+    <section id="pagina-cultura" class="page-view">
+      <div class="section-lab">
+        <div class="container">
+          
+          <div class="lab-header">
+            <span class="mono-label">PILAR B • COMPETENCIAS GERENCIALES INTERCULTURALES</span>
+            <h1 class="page-title-clean">Escuela de Cultura Exportadora</h1>
+            <p class="page-intro-clean">"Capacitación gerencial para negociar directamente (B2B) sin depender de intermediarios."</p>
+          </div>
+
+          <!-- 3 Celdas de Dossier Ejecutivo -->
+          <div class="culture-triad-grid">
+            
+            <!-- Celda 1 -->
+            <div class="culture-dossier-cell">
+              <div class="dossier-index">PROTOCOLO // 01</div>
+              <h3 class="dossier-title">El tiempo es dinero</h3>
+              <p class="dossier-text">"En Miami no hay margen para demoras. Cumple cada plazo."</p>
+            </div>
+
+            <!-- Celda 2 -->
+            <div class="culture-dossier-cell">
+              <div class="dossier-index">PROTOCOLO // 02</div>
+              <h3 class="dossier-title">Datos vs. Emociones</h3>
+              <p class="dossier-text">"El comprador exige volúmenes exactos y fichas técnicas."</p>
+            </div>
+
+            <!-- Celda 3 -->
+            <div class="culture-dossier-cell">
+              <div class="dossier-index">PROTOCOLO // 03</div>
+              <h3 class="dossier-title">Formalidad Escrita</h3>
+              <p class="dossier-text">"Todo trato debe quedar firmado de inmediato."</p>
+            </div>
+
+          </div>
+
+          <!-- Despacho Ejecutivo: Tip de Oro Incoterms 2020 -->
+          <div class="tip-executive-dispatch">
+            <div class="tip-index-seal">CLÁUSULA ESTRATÉGICA</div>
+            <div class="tip-content">
+              <h3>Tip de Oro - Incoterms 2020</h3>
+              <p>"Evita el EXW y el DDP. Utiliza el FOB si tu comprador coordina la nave, o CIF si ofreces el servicio completo desde el Puerto de Santa Marta."</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PÁGINA 4: SIMULADOR ADUANERO SUPERVISADO (TERMINAL DE CO-GESTIÓN)
+         ====================================================================== -->
+    <section id="pagina-simulador" class="page-view">
+      <div class="section-lab">
+        <div class="container container-narrow">
+          
+          <div class="lab-header">
+            <span class="mono-label">PILAR C • TERMINAL INSTITUCIONAL PRE-ADUANERA</span>
+            <h1 class="page-title-clean">Simulador Aduanero Supervisado</h1>
+            <p class="page-intro-clean">Módulo de cruce documental y blindaje jurídico preventivo ante el Sistema Informático Electrónico (SIE) de la DIAN.</p>
+          </div>
+
+          <!-- Terminal Card -->
+          <div class="terminal-card">
+            
+            <!-- Cabecera Institucional -->
+            <div class="terminal-header">
+              <div class="terminal-title-group">
+                <div class="terminal-indicator"></div>
+                <h2>Módulo de Cotejo y Blindaje Pre-SAE / DEX</h2>
+              </div>
+              <div class="terminal-system-tag">
+                DECRETO LEY 2586 DE 2026 • AUDITORÍA EN TIEMPO REAL
+              </div>
+            </div>
+
+            <div class="terminal-body">
+              
+              <!-- BLOQUE 1: Paso 1: Adjunte los Documentos Soporte -->
+              <div class="terminal-block">
+                <div class="block-headline-row">
+                  <h3 class="block-title-clean">
+                    <span class="block-num-badge">P1</span>
+                    <span>Paso 1: Adjunte los Documentos Soporte</span>
+                  </h3>
+                </div>
+
+                <div class="dossier-grid">
+                  
+                  <!-- Slot 1: Factura Comercial -->
+                  <div class="dossier-slot-card" id="uploadCard1">
+                    <input type="file" class="file-input-native" id="fileInput1" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg" title="Adjuntar Factura Comercial">
+                    <button type="button" class="btn-dossier-action" id="btnUpload1" data-default="[ 📎 Cargar Factura Comercial ]">
+                      <span>[ 📎 Cargar Factura Comercial ]</span>
+                    </button>
+                    <span class="dossier-helper">Arrastre su archivo o haga clic para adjuntar</span>
+
+                    <!-- Barra de progreso de escaneo -->
+                    <div class="dossier-progress-panel" id="progressContainer1">
+                      <div class="progress-meta-row">
+                        <span class="progress-file-name" id="filenameTxt1">archivo.pdf</span>
+                        <span class="progress-metric" id="percentTxt1">0%</span>
+                      </div>
+                      <div class="progress-track-clean">
+                        <div class="progress-fill-clean" id="progressBar1"></div>
+                      </div>
+                      <span class="progress-status-msg" id="statusTxt1">Verificando firma digital y valor comercial...</span>
+                    </div>
+
+                    <!-- Ficha de confirmación -->
+                    <div class="dossier-success-pill" id="completedBadge1">
+                      <div class="dossier-pill-file">
+                        <span>📄</span>
+                        <span class="dossier-file-label" id="badgeName1">Factura_Comercial.pdf</span>
+                        <span class="dossier-file-weight" id="badgeSize1">(245 KB)</span>
+                      </div>
+                      <button type="button" class="btn-change-file" id="btnReupload1">Cambiar</button>
+                    </div>
+                  </div>
+
+                  <!-- Slot 2: Lista de Empaque -->
+                  <div class="dossier-slot-card" id="uploadCard2">
+                    <input type="file" class="file-input-native" id="fileInput2" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg" title="Adjuntar Lista de Empaque">
+                    <button type="button" class="btn-dossier-action" id="btnUpload2" data-default="[ 📎 Cargar Lista de Empaque ]">
+                      <span>[ 📎 Cargar Lista de Empaque ]</span>
+                    </button>
+                    <span class="dossier-helper">Arrastre su archivo o haga clic para adjuntar</span>
+
+                    <!-- Barra de progreso de escaneo -->
+                    <div class="dossier-progress-panel" id="progressContainer2">
+                      <div class="progress-meta-row">
+                        <span class="progress-file-name" id="filenameTxt2">packing_list.pdf</span>
+                        <span class="progress-metric" id="percentTxt2">0%</span>
+                      </div>
+                      <div class="progress-track-clean">
+                        <div class="progress-fill-clean" id="progressBar2"></div>
+                      </div>
+                      <span class="progress-status-msg" id="statusTxt2">Comprobando cubicaje y tara de bultos...</span>
+                    </div>
+
+                    <!-- Ficha de confirmación -->
+                    <div class="dossier-success-pill" id="completedBadge2">
+                      <div class="dossier-pill-file">
+                        <span>📦</span>
+                        <span class="dossier-file-label" id="badgeName2">Lista_de_Empaque.pdf</span>
+                        <span class="dossier-file-weight" id="badgeSize2">(180 KB)</span>
+                      </div>
+                      <button type="button" class="btn-change-file" id="btnReupload2">Cambiar</button>
+                    </div>
+                  </div>
+
+                  <!-- Slot 3: Vistos Buenos INVIMA/FDA -->
+                  <div class="dossier-slot-card" id="uploadCard3">
+                    <input type="file" class="file-input-native" id="fileInput3" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg" title="Adjuntar Vistos Buenos INVIMA/FDA">
+                    <button type="button" class="btn-dossier-action" id="btnUpload3" data-default="[ 📎 Cargar Vistos Buenos (INVIMA/FDA) ]">
+                      <span>[ 📎 Cargar Vistos Buenos (INVIMA/FDA) ]</span>
+                    </button>
+                    <span class="dossier-helper">Arrastre su archivo o haga clic para adjuntar</span>
+
+                    <!-- Barra de progreso de escaneo -->
+                    <div class="dossier-progress-panel" id="progressContainer3">
+                      <div class="progress-meta-row">
+                        <span class="progress-file-name" id="filenameTxt3">vistos_buenos.pdf</span>
+                        <span class="progress-metric" id="percentTxt3">0%</span>
+                      </div>
+                      <div class="progress-track-clean">
+                        <div class="progress-fill-clean" id="progressBar3"></div>
+                      </div>
+                      <span class="progress-status-msg" id="statusTxt3">Validando registro sanitario y número de establecimiento FDA...</span>
+                    </div>
+
+                    <!-- Ficha de confirmación -->
+                    <div class="dossier-success-pill" id="completedBadge3">
+                      <div class="dossier-pill-file">
+                        <span>🛡️</span>
+                        <span class="dossier-file-label" id="badgeName3">Vistos_Buenos_INVIMA_FDA.pdf</span>
+                        <span class="dossier-file-weight" id="badgeSize3">(512 KB)</span>
+                      </div>
+                      <button type="button" class="btn-change-file" id="btnReupload3">Cambiar</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- BLOQUE 2: Paso 2: Transcripción de Datos al Sistema -->
+              <div class="terminal-block">
+                <div class="block-headline-row">
+                  <h3 class="block-title-clean">
+                    <span class="block-num-badge">P2</span>
+                    <span>Paso 2: Transcripción de Datos al Sistema</span>
+                  </h3>
+                  <!-- Asistencia para Sustentación -->
+                  <button type="button" class="btn-autofill-clean" id="btnAutofill">
+                    [ ⚡ Autocompletar Caso de Prueba ]
+                  </button>
+                </div>
+
+                <form id="customsForm" onsubmit="return false;">
+                  <div class="form-grid-clean">
+                    
+                    <!-- Campo 1: NIT de la Empresa -->
+                    <div class="form-group form-col-full">
+                      <label class="field-label-clean" for="empresaNIT">
+                        NIT de la Empresa (Verificar Código 22):
+                      </label>
+                      <input type="text" class="field-input-clean" id="empresaNIT" placeholder="Ej: 900.123.456-7" required>
+                    </div>
+
+                    <!-- Campo 2: Subpartida Arancelaria -->
+                    <div class="form-group">
+                      <label class="field-label-clean" for="subpartida">
+                        Subpartida Arancelaria:
+                      </label>
+                      <input type="number" class="field-input-clean" id="subpartida" placeholder="Ej: 1905900000" required>
+                    </div>
+
+                    <!-- Campo 3: Peso Bruto y Peso Neto (Kg) -->
+                    <div class="form-group">
+                      <label class="field-label-clean" for="pesos">
+                        Peso Bruto y Peso Neto (Kg):
+                      </label>
+                      <input type="text" class="field-input-clean" id="pesos" placeholder="Ej: 1500 kg" required>
+                    </div>
+
+                    <!-- Campo 4: Valor FOB Total (USD) -->
+                    <div class="form-group">
+                      <label class="field-label-clean" for="valorFOB">
+                        Valor FOB Total (USD):
+                      </label>
+                      <input type="number" class="field-input-clean" id="valorFOB" placeholder="Ej: 5000" required>
+                    </div>
+
+                    <!-- Campo 5: Término de Negociación (Incoterm Acordado) -->
+                    <div class="form-group">
+                      <label class="field-label-clean" for="incotermSelect">
+                        Término de Negociación (Incoterm Acordado):
+                      </label>
+                      <select class="field-select-clean" id="incotermSelect" required>
+                        <option value="" disabled selected>-- Seleccione un Incoterm --</option>
+                        <option value="EXW">EXW (En Fábrica)</option>
+                        <option value="FCA">FCA (Libre Transportista)</option>
+                        <option value="FAS">FAS (Libre al Costado del Buque)</option>
+                        <option value="FOB">FOB (Libre a Bordo)</option>
+                        <option value="CFR">CFR (Costo y Flete)</option>
+                        <option value="CIF">CIF (Costo, Seguro y Flete)</option>
+                        <option value="CPT">CPT (Transporte Pagado Hasta)</option>
+                        <option value="CIP">CIP (Transporte y Seguro Pagados)</option>
+                        <option value="DAP">DAP (Entregado en Lugar)</option>
+                        <option value="DPU">DPU (Entregado y Descargado)</option>
+                        <option value="DDP">DDP (Entregado Derechos Pagados)</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+
+              <!-- BLOQUE 3: Validación Final (Botón de Cierre) -->
+              <div class="terminal-block">
+                <div class="action-terminal-center">
+                  <button type="button" class="btn-cruce-monumental" id="btnEjecutarCruce">
+                    <span>EJECUTAR CRUCE DE DATOS Y CHECKLIST DE BLINDAJE</span>
+                    <span style="font-family: var(--font-mono);">⚡</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL 1: AUDITORÍA Y CRUCE DE DATOS EN TIEMPO REAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="processingModal" role="dialog" aria-modal="true" aria-labelledby="processingTitle">
+    <div class="modal-processing-dossier">
+      <span class="mono-label">AUDITORÍA FORENSE PRE-SAE</span>
+      <h3 id="processingTitle" style="font-size: 1.45rem; color: var(--color-primary); margin: 0.75rem 0 0.35rem;">
+        Ejecutando Cruce de Datos y Matriz de Blindaje
+      </h3>
+      <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+        Conciliando documentos soporte con los datos del formulario pre-aduanero DIAN...
+      </p>
+
+      <div class="processing-scan-bar-track">
+        <div class="processing-scan-bar-fill" id="processingMainBar"></div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1.5rem;">
+        <span id="processingStepLabel">Iniciando verificación documental...</span>
+        <span id="processingPercentLabel" style="color: var(--color-secondary);">0%</span>
+      </div>
+
+      <ul class="audit-step-manifest">
+        <li class="audit-manifest-row" id="auditStep1">
+          <span class="audit-icon">⏳</span>
+          <span>1. Conciliación OCR de Factura Comercial vs. Lista de Empaque</span>
+        </li>
+        <li class="audit-manifest-row" id="auditStep2">
+          <span class="audit-icon">⏳</span>
+          <span>2. Validación de Subpartida Arancelaria frente a Vistos Buenos INVIMA / FDA</span>
+        </li>
+        <li class="audit-manifest-row" id="auditStep3">
+          <span class="audit-icon">⏳</span>
+          <span>3. Verificación de NIT y habilitación usuario aduanero Código 22 en el RUT</span>
+        </li>
+        <li class="audit-manifest-row" id="auditStep4">
+          <span class="audit-icon">⏳</span>
+          <span>4. Auditoría de coherencia de Pesos, Valor FOB e Incoterm 2020 acordado</span>
+        </li>
+        <li class="audit-manifest-row" id="auditStep5">
+          <span class="audit-icon">⏳</span>
+          <span>5. Control de contingencia y blindaje frente al Decreto Ley 2586 de 2026</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: CERTIFICADO DE BLINDAJE JURÍDICO APROBADO (POP-UP GIGANTE)
+       ======================================================================== -->
+  <div class="modal-overlay" id="validationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-certificate-card">
+      <button class="modal-close-icon" id="modalCloseBtn" aria-label="Cerrar Certificado">&times;</button>
+      
+      <div class="cert-shield-badge">🛡️</div>
+
+      <h3 class="cert-title-official" id="modalTitle">
+        🟢 ¡VERIFICACIÓN EXITOSA - BLINDAJE JURÍDICO APROBADO!
+      </h3>
+
+      <div class="cert-declaration-text">
+        "Los datos digitados coinciden al 100% con los documentos soporte cargados. No hay inexactitudes. Se ha mitigado el riesgo de sanción bajo el Decreto Ley 2586 de 2026. Se autoriza la transmisión oficial de la Declaración de Exportación (DEX) en la plataforma de la DIAN."
+      </div>
+
+      <!-- Tabla Resumen de Conciliación -->
+      <table class="cert-audit-table">
+        <tbody>
+          <tr>
+            <td>NIT Empresa (Código 22):</td>
+            <td id="modalResumenNIT">900.123.456-7 (Habilitado)</td>
+          </tr>
+          <tr>
+            <td>Subpartida Arancelaria:</td>
+            <td id="modalResumenSubpartida">1905.90.00.00 (Inocuidad FDA Verificada)</td>
+          </tr>
+          <tr>
+            <td>Término de Negociación:</td>
+            <td id="modalResumenIncoterm">FOB (Puerto de Santa Marta)</td>
+          </tr>
+          <tr>
+            <td>Documentos Soporte:</td>
+            <td id="modalResumenArchivos">Factura Comercial, Lista de Empaque y Vistos Buenos (100% cotejados)</td>
+          </tr>
+          <tr>
+            <td>Blindaje Sancionatorio:</td>
+            <td>Cero Infracciones Aduaneras (Decreto Ley 2586 de 2026)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cert-btn-row">
+        <button type="button" class="btn-cert-primary" id="btnModalAceptar">
+          Transmitir Declaración DEX Oficial
+        </button>
+        <button type="button" class="btn-cert-outline" id="btnModalReiniciar">
+          Nueva Simulación
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PIE DE PÁGINA (FOOTER INSTITUCIONAL)
+       ======================================================================== -->
+  <footer class="footer-editorial">
+    <div class="container footer-inner-content">
+      <div class="footer-line-primary">Universidad del Magdalena | Programa de Negocios Internacionales</div>
+      <div class="footer-line-secondary">Seminario Taller de Investigación 1</div>
+      <div class="footer-line-tertiary">Santa Marta D.T.C.H., Colombia - Proyecto Ruta Sin Fronteras © 2026</div>
+      
+      <div class="footer-hairline-sep"></div>
+
+      <button type="button" class="footer-academic-toggle" id="authorsToggleBtn">
+        // CONSULTAR FICHA ACADÉMICA Y EQUIPO INVESTIGADOR
+      </button>
+
+      <div class="footer-academic-panel" id="authorsPanel">
+        <strong>Docente Titular:</strong> Digna Peña Curieux. PhD (Doctora Gestión de la Tecnología y la Innovación)<br>
+        <strong>Equipo / Grupo de Trabajo # 1:</strong> Laura Valentina Arévalo Ramos (2025126025), Yerlis Fonseca (2025126076), Génesis Andrea Germán Colón (2025126027), Valery Manotas (2025126077), Natalia Montoya (2025126078), Jeanny Paba (2025126134), Jonathan Quitian (2025126028).<br>
+        <em>Facultad de Ciencias Empresariales y Económicas • Universidad del Magdalena (2026)</em>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica Interactiva y Navegación SPA -->
+  <script src="js/app.js"></script>
+</body>
+</html>

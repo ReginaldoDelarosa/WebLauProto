@@ -1,0 +1,1501 @@
+/* ==========================================================================
+   RUTA SIN FRONTERAS - SISTEMA DE DISEÑO EDITORIAL & ARQUITECTÓNICO
+   Inspiración: Minimalismo Suizo, Diseño Editorial de Alta Precisión
+   Universidad del Magdalena - Programa de Negocios Internacionales
+   Paleta: Azul Marino (#1B365D) | Naranja (#E87722) | Blanco (#FFFFFF) | Gris (#F4F6F9)
+   ========================================================================== */
+
+/* --- Variables de Diseño y Tipografía --- */
+:root {
+  --color-primary: #1B365D;           /* Azul Marino Profundo Institucional */
+  --color-primary-dark: #0F223D;      /* Azul Marino Noche */
+  --color-primary-light: #2A4D7E;     /* Azul Marino Acento */
+  --color-secondary: #E87722;         /* Naranja Operativo Quirúrgico */
+  --color-secondary-hover: #D06313;   
+  --color-secondary-subtle: #FFF5EE;  /* Fondo tenue naranja */
+  --color-bg-base: #FFFFFF;           /* Blanco puro */
+  --color-bg-subtle: #F8FAFC;         /* Blanco arquitectónico */
+  --color-bg-technical: #F4F6F9;      /* Gris técnico del pliego */
+  --color-text-main: #0F172A;         /* Tinta negra de imprenta */
+  --color-text-muted: #475569;        /* Tinta secundaria */
+  --color-text-dim: #94A3B8;          /* Metadatos */
+  
+  --color-border-hairline: #E2E8F0;   /* Filete suizo ultra delgado */
+  --color-border-dark: #1B365D;       /* Filete estructural marino */
+  --color-border-accent: #E87722;     /* Filete naranja */
+  
+  --color-success: #0D6938;           /* Verde DIAN Oficial */
+  --color-success-bg: #F0FDF4;
+  --color-success-border: #16A34A;
+  
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+  
+  --ease-clean: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.15s var(--ease-clean);
+  --transition-smooth: 0.28s var(--ease-clean);
+  
+  --radius-sharp: 2px;
+  --radius-card: 4px;
+}
+
+/* --- Reseteo Editorial --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-base);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tipografía de Alto Impacto */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Contenedores Arquitectónicos */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-narrow {
+  max-width: 1020px;
+}
+
+/* Micro-etiquetas Monospaciadas (Acento Técnico No-AI) */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mono-label::before {
+  content: '//';
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN SUPERIOR EDITORIAL (NAVBAR)
+   ========================================================================== */
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border-hairline);
+  transition: all var(--transition-fast);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+/* Brand Link Minimalista con Logo Oficial */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  transition: transform var(--transition-fast);
+}
+
+.brand-link:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo-img {
+  height: 56px;
+  width: auto;
+  max-width: 160px;
+  display: block;
+  object-fit: contain;
+}
+
+.brand-editorial-lockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1.5px solid var(--color-border-hairline);
+  padding-left: 0.85rem;
+}
+
+.brand-editorial-title {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.brand-editorial-sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+/* Menú de Navegación Arquitectónico */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-sharp);
+  background-color: var(--color-bg-subtle);
+  padding: 3px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sharp);
+  transition: all var(--transition-fast);
+  letter-spacing: -0.01em;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: #FFFFFF;
+}
+
+.nav-link.active {
+  color: #FFFFFF;
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 3px rgba(27, 54, 93, 0.2);
+}
+
+.nav-link.active span.nav-num {
+  color: var(--color-secondary);
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-right: 0.35rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-spacer {
+  height: 76px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE PÁGINAS (SPA)
+   ========================================================================== */
+.page-view {
+  display: none;
+  opacity: 0;
+}
+
+.page-view.active-page {
+  display: block;
+  opacity: 1;
+  animation: pageFadeIn 0.22s var(--ease-clean) forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   PÁGINA 1: INICIO (HOME) - ESTILO EDITORIAL ASIMÉTRICO
+   ========================================================================== */
+.hero-editorial {
+  position: relative;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-bottom: 3px solid var(--color-secondary);
+  overflow: hidden;
+}
+
+/* Capa náutica con filtro institucional profundo */
+.hero-editorial-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/hero-port.svg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.22;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+}
+
+.hero-editorial-grid {
+  position: relative;
+  z-index: 2;
+  padding: 5.5rem 0 6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.hero-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 1rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-meta-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-meta-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  display: inline-block;
+}
+
+.hero-coordinates {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+}
+
+.hero-title {
+  font-size: 3.35rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.75rem;
+  max-width: 980px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.32rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  max-width: 840px;
+  margin-bottom: 3rem;
+  border-left: 2px solid var(--color-secondary);
+  padding-left: 1.25rem;
+}
+
+/* Botón Naranja Quirúrgico */
+.btn-editorial-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 1.25rem 2.75rem;
+  border: none;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(232, 119, 34, 0.35);
+  width: fit-content;
+}
+
+.btn-editorial-cta:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 119, 34, 0.45);
+}
+
+.btn-editorial-cta .cta-arrow {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-editorial-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* SECCIÓN BLANCA: EL PROBLEMA (INFORME ESPECIAL) */
+.section-problem {
+  padding: 6.5rem 0;
+  background-color: var(--color-bg-base);
+}
+
+.editorial-report-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.report-sidebar {
+  border-right: 1px solid var(--color-border-hairline);
+  padding-right: 2.5rem;
+}
+
+.report-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.report-context-title {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+}
+
+.report-meta-list {
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+.report-main-content h2.problem-title {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  line-height: 1.15;
+}
+
+.problem-paragraph-editorial {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  line-height: 1.85;
+  font-weight: 400;
+  margin-bottom: 3.5rem;
+  padding: 1.75rem 2rem;
+  background-color: var(--color-bg-technical);
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Fichas de Auditoría Empírica */
+.audit-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-border-hairline);
+  padding-top: 3rem;
+}
+
+.stat-cell {
+  padding: 1.25rem 0;
+}
+
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: 0.65rem;
+}
+
+.stat-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.45rem;
+}
+
+.stat-desc {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   PÁGINA 2: CLÍNICA DE GLOCALIZACIÓN TÉCNICA (LABORATORIO DE ADECUACIÓN)
+   ========================================================================== */
+.section-lab {
+  padding: 5rem 0 6.5rem;
+  background-color: var(--color-bg-technical);
+  min-height: calc(100vh - 152px);
+}
+
+.lab-header {
+  border-bottom: 1px solid var(--color-border-hairline);
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.page-title-clean {
+  font-size: 2.6rem;
+  color: var(--color-primary);
+}
+
+.page-intro-clean {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 820px;
+  line-height: 1.6;
+}
+
+/* Mesa de Control / Selector */
+.lab-intake-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-card);
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.lab-prompt-headline {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lab-prompt-headline::before {
+  content: '>';
+  color: var(--color-secondary);
+  font-weight: 900;
+}
+
+.sector-switch-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-lab-toggle {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-hairline);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 1.1rem 1.85rem;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.btn-lab-toggle:hover {
+  background-color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.btn-lab-toggle.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.btn-lab-toggle.active::after {
+  content: '●';
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  margin-left: 0.4rem;
+}
+
+/* Alerta de Requisitos Editorial */
+.glocalization-result-box {
+  display: none;
+  border-left: 4px solid var(--color-secondary);
+  background-color: var(--color-secondary-subtle);
+  padding: 2.25rem 2rem;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  animation: labFade 0.2s var(--ease-clean) forwards;
+}
+
+.glocalization-result-box.visible {
+  display: block;
+}
+
+@keyframes labFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-header-clean {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #9A3412;
+  margin-bottom: 1.5rem;
+}
+
+.requirements-list-clean {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.requirements-list-clean li {
+  font-size: 1.08rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.status-badge-clean {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.4rem;
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  border-radius: var(--radius-sharp);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+/* ==========================================================================
+   PÁGINA 3: ESCUELA DE CULTURA EXPORTADORA (DOSSIER GERENCIAL)
+   ========================================================================== */
+.culture-triad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.culture-dossier-cell {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-hairline);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-sharp);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.culture-dossier-cell:hover {
+  transform: translateY(-3px);
+  border-top-color: var(--color-secondary);
+  border-color: rgba(27, 54, 93, 0.25);
+}
+
+.dossier-index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+}
+
+.dossier-title {
+  font-size: 1.45rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.dossier-text {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* Banner Tip de Oro Incoterms 2020 (Despacho Ejecutivo) */
+.tip-executive-dispatch {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-left: 6px solid var(--color-secondary);
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius-sharp);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.tip-index-seal {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  letter-spacing: 0.15em;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(232, 119, 34, 0.5);
+  border-radius: var(--radius-sharp);
+  text-transform: uppercase;
+}
+
+.tip-content h3 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.tip-content p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.18rem;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   PÁGINA 4: SIMULADOR ADUANERO SUPERVISADO (TERMINAL INSTITUCIONAL)
+   ========================================================================== */
+.terminal-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2.5rem;
+}
+
+.terminal-header {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.terminal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.terminal-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #22C55E;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.terminal-header h2 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.terminal-system-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.08em;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sharp);
+}
+
+.terminal-body {
+  padding: 3rem 2.5rem;
+}
+
+/* Bloques del Simulador */
+.terminal-block {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border-hairline);
+}
+
+.terminal-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.block-headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.block-title-clean {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.block-num-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sharp);
+}
+
+.btn-autofill-clean {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-autofill-clean:hover {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+}
+
+/* Intake Dossier de Documentos Soporte (Paso 1) */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.dossier-slot-card {
+  position: relative;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-sharp);
+  padding: 1.35rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 145px;
+  min-width: 0;
+  width: 100%;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.dossier-slot-card:hover {
+  background-color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.dossier-slot-card.dragover {
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary-subtle);
+}
+
+.file-input-native {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.btn-dossier-action {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-hairline);
+  padding: 0.85rem 0.75rem;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all var(--transition-fast);
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.btn-dossier-action:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.dossier-helper {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Barra de Carga Técnica */
+.dossier-progress-panel {
+  display: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  min-width: 0;
+}
+
+.dossier-progress-panel.active {
+  display: block;
+}
+
+.progress-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+  min-width: 0;
+}
+
+.progress-file-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-metric {
+  color: var(--color-secondary);
+  font-weight: 800;
+  margin-left: 0.4rem;
+}
+
+.progress-track-clean {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-border-hairline);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.progress-fill-clean {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-secondary);
+  transition: width 0.15s ease-out;
+}
+
+.progress-status-msg {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* Estado Aprobado / Cargado */
+.dossier-slot-card.uploaded {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-border);
+}
+
+.btn-dossier-action.uploaded {
+  background-color: var(--color-success);
+  color: #FFFFFF;
+  border-color: var(--color-success);
+  font-weight: 800;
+}
+
+.dossier-success-pill {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-success-border);
+  padding: 0.45rem 0.65rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  border-radius: var(--radius-sharp);
+  min-width: 0;
+}
+
+.dossier-slot-card.uploaded .dossier-success-pill {
+  display: flex;
+}
+
+.dossier-pill-file {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dossier-file-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-success);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.dossier-file-weight {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  flex-shrink: 0;
+}
+
+.btn-change-file {
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.1rem 0.3rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Formulario de Transcripción Paso 2 */
+.form-grid-clean {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.form-col-full {
+  grid-column: span 2;
+}
+
+.field-label-clean {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.field-input-clean, .field-select-clean {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-sharp);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.field-input-clean:focus, .field-select-clean:focus {
+  background-color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(27, 54, 93, 0.12);
+}
+
+.field-input-clean::placeholder {
+  color: var(--color-text-dim);
+}
+
+/* Paso 3: Botón de Cierre Monumental */
+.action-terminal-center {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.btn-cruce-monumental {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.4rem 3.5rem;
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 18px rgba(232, 119, 34, 0.35);
+  width: 100%;
+  max-width: 720px;
+}
+
+.btn-cruce-monumental:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(232, 119, 34, 0.45);
+}
+
+/* ==========================================================================
+   MODALES DE ALTA PRECISIÓN (PROCESAMIENTO & CERTIFICACIÓN DIAN)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* Modal de Procesamiento Forense */
+.modal-processing-dossier {
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sharp);
+  padding: 3rem 2.5rem;
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.processing-scan-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border-hairline);
+  margin: 1.5rem 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.processing-scan-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-secondary);
+  transition: width 0.18s ease-out;
+}
+
+.audit-step-manifest {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.audit-manifest-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-bg-subtle);
+  border-left: 2px solid transparent;
+}
+
+.audit-manifest-row.done {
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border-left-color: var(--color-success-border);
+  font-weight: 700;
+}
+
+/* Modal Certificado Oficial DIAN */
+.modal-certificate-card {
+  background-color: #FFFFFF;
+  border: 3px solid var(--color-success-border);
+  border-radius: var(--radius-sharp);
+  max-width: 760px;
+  width: 100%;
+  padding: 3rem;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-text-dim);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-icon:hover {
+  color: var(--color-primary);
+}
+
+.cert-shield-badge {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background-color: var(--color-success-bg);
+  border: 2px solid var(--color-success-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  border-radius: var(--radius-sharp);
+}
+
+.cert-title-official {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: var(--color-success);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.cert-declaration-text {
+  font-size: 1.15rem;
+  color: var(--color-text-main);
+  line-height: 1.8;
+  text-align: justify;
+  background-color: var(--color-bg-subtle);
+  padding: 1.75rem;
+  border-left: 4px solid var(--color-success-border);
+  margin-bottom: 2rem;
+}
+
+.cert-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.cert-audit-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--color-border-hairline);
+}
+
+.cert-audit-table td:first-child {
+  color: var(--color-primary);
+  font-weight: 700;
+  width: 36%;
+}
+
+.cert-btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-cert-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-cert-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-cert-outline {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+}
+
+.btn-cert-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER INSTITUCIONAL)
+   ========================================================================== */
+.footer-editorial {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 3.5rem 0 2.5rem;
+  border-top: 4px solid var(--color-secondary);
+  margin-top: auto;
+}
+
+.footer-inner-content {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.footer-line-primary {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+}
+
+.footer-line-secondary {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.4rem;
+}
+
+.footer-line-tertiary {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.05em;
+}
+
+.footer-hairline-sep {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-secondary);
+  margin: 1.5rem auto;
+}
+
+.footer-academic-toggle {
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-academic-panel {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sharp);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  text-align: left;
+}
+
+.footer-academic-panel.visible {
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
+   ========================================================================== */
+@media (max-width: 1120px) {
+  .editorial-report-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .report-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-hairline);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+  .dossier-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.45rem;
+  }
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+  .culture-triad-grid,
+  .audit-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .dossier-grid {
+    grid-template-columns: 1fr;
+  }
+  .tip-executive-dispatch {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.75rem;
+    gap: 1.25rem;
+  }
+  .terminal-body {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    height: 70px;
+  }
+  .nav-spacer {
+    height: 70px;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0;
+    display: none;
+    border-bottom: 2px solid var(--color-primary);
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .form-grid-clean {
+    grid-template-columns: 1fr;
+  }
+  .form-col-full {
+    grid-column: span 1;
+  }
+  .hero-editorial-grid {
+    padding: 4rem 0;
+  }
+  .btn-editorial-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem 1.75rem;
+  }
+  .modal-certificate-card {
+    padding: 2rem 1.25rem;
+  }
+}
